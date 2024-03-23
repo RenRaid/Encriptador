@@ -1,11 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel="stylesheet">
+    
+    <title>Encriptador</title>
+
 </head>
 <body>
     
+    <main class="main">
+<!-- Esta seccion contiene al alura logo, area de entrada de texto y los botones para encriptar/desencriptar-->
+        <section class="secc1">
+            <header class="head">
+                <img class="logo" src="images/giphy.gif" >
+                <h1>ENCRIPTADOR</h1>
+            </header>
+            <div class="input" >
+                <textarea id="Text_Input" placeholder="Introduce texto.... " cols="45" rows="13"></textarea>
+                <div class= "warn-cont">
+                    <img class= "exlogo" src="images/exclamation-mark.svg">
+                    <p class="warn"> Solo letras minusculas y sin acentos</p>
+                </div>
+                <div >
+                    <button id="encry" disabled class= "EnBtn" onclick="btnEncriptar(0,1)" >Encriptar</button>
+                    <button id="decry" disabled class=" DeBtn" onclick="btnEncriptar(1,0)">Desencriptar</button>
+                    <button class="eraser" id="erase" style="display: none;"><i class='bx bx-eraser'></i></button>
+                </div>   
+            </div>
+        </section>
+
+<!--esta seccion contiene el area del resultado de encriptar/desencriptar-->
+
+        <section class="result">
+            <div>
+                <textarea id="Text_Result" cols="28" rows="18" readonly></textarea>
+                <img src="images/latch3.jpg" alt="Watermark" class="watermark">
+                
+            </div>
+            <div Class="copy">
+                <button id="copy_btn" style="display:none"><i class='bx bx-copy'></i></button>
+            </div>
+        </section>
+
+    </main>
+
+<!-- Aca se configura el pop-up cuando se escribe mayuscula o letras con acentos-->
+    <div class= "modal-container" id= "modal_container">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <p class="head-alert">Alerta</p>
+                <button id="close" class="button-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <image class="alert" src="images/Alert4.png"></image>
+                <p>Para continuar debe reemplazar las letras mayusculas y acentos.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="Encript.js"></script>
 </body>
+
 </html>
